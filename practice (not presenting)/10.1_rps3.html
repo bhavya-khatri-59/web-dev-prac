@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title> Rock Paper Scissors </title>
+    <link href = "css files/10.1_rps.css" rel = "stylesheet">
+</head>
+
+<body>
+    <p class = 'title'> Rock Paper Scissors </p>
+    <p>
+        <button onclick = "game('r')" class = 'move-b'> <img src = "images/rock.png" class = 'image'> </button>&nbsp;
+        <button onclick = "game('p')" class = 'move-b'> <img src = "images/paper.png" class = 'image'> </button>&nbsp;
+        <button onclick = "game('s')" class = 'move-b'> <img src = "images/scissors.png" class = 'image'> </button>
+    </p>
+    <p class = "Result"></p>
+    <p class = "Choices"></p>
+    <p class = "wlr"></p>
+    <button onclick = "reset()" class = "reset-b"> Reset Score </button>
+	<script src = 'js files/10.1_rps.js'></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title> DOM </title>
+
+    <style>
+        .b1 {
+            border: none;
+            background-color: red;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .b2 {
+            border: none;
+            background-color: gray;
+            color: black;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .b3 {
+            border: none;
+            background-color: green;
+            color: white;
+            padding-top: 12px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family: "Lucida Console";
+        }
+        .input {
+            padding: 10px;
+            font-size: 15px;
+            font-family: "Monaco", "Lucida Console", monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <p> Subscribe to Technoblade </p>
+    <p class = 'p1'><button class = 'b1' onclick = "Subscribe()"> Subscribe </button></p>
+
+    <p>Shipping calculator</p>
+    <p> Cost of Order + $10 shipping </p>
+    <p> Over $40 free shipping</p>
+    <input placeholder="Cost of order" class = 'i1 input' onkeydown="shortcut(event)">
+    <button onclick = "calculate()" class = "b3"> Calculate </button>
+    <p class = 'cost'></p>
+
+	<script>
+        function shortcut(event) {
+            if(event.key === 'Enter') {
+                calculate()
+            }
+        }
+        function calculate() {
+            input = document.querySelector('.i1')
+            price = Number((input.value).substring(1, input.value.length))
+            if(price < 40) {
+                price = price*100 + 1000
+                price /= 100
+            }
+            fc = document.querySelector('.cost')
+            fc.innerHTML = '$' + price.toString()
+        }
+
+        function Subscribe() {
+            b1 = document.querySelector('.p1')
+            b1.innerHTML = "<button class = 'b2' onclick = 'Unsubscribe()'> Subscribed </button>"
+        }
+        function Unsubscribe(){
+            alert('nerd')
+            b2 = document.querySelector('.p1')
+            b2.innerHTML = "<button class = 'b1' onclick = 'Subscribe()'> Subscribe </button>"
+        }
+
+	</script>
+</body>
+</html>

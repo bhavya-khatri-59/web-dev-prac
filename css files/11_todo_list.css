@@ -1,0 +1,43 @@
+body {
+    font-family:'Lucida Console';
+    background-color: rgb(19, 2, 92);
+    color: white;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 208px 148px 100px;
+    align-items: center;
+}
+.i1, .i2 {
+    padding: 10px;
+    font-family: 'Lucida Console';
+    /*background-color: yellow;*/
+    color: rgb(19, 2, 92);
+}
+.add {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*padding-left: 23px;
+    padding-right: 23px;*/
+    background: green;
+    color: white;
+    font-family: 'Lucida Console';
+    cursor: pointer;
+    border: none;
+}
+.del {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 30px;
+    width: 100px;
+    /*padding-left: 11px;
+    padding-right: 11px;*/
+    background: red;
+    color: white;
+    font-family: 'Lucida Console';
+    cursor: pointer;
+    border: none;
+}
+.m {
+    margin-bottom: 10px;
+}

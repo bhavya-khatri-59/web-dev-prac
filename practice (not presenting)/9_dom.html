@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title> DOM </title>
+
+    <style>
+        .b1 {
+            background-color: red;
+            color: white;
+        }
+        .b2 {
+            background-color: gray;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <p> Subscribe to Technoblade </p>
+    <p class = 'p1'><button class = 'b1' onclick = "Subscribe()"> Subscribe </button></p>
+
+    <p>Shipping calculator</p>
+    <p> Cost of Order + $10 shipping </p>
+    <p> Over $40 free shipping</p>
+    <input placeholder="Cost of order" class = 'i1' onkeydown="shortcut(event)">
+    <button onclick = "calculate()"> Calculate </button>
+    <p class = 'cost'></p>
+
+	<script>
+        function shortcut(event) {
+            if(event.key === 'Enter') {
+                calculate()
+            }
+        }
+        function calculate() {
+            input = document.querySelector('.i1')
+            price = Number((input.value).substring(1, input.value.length))
+            if(price < 40) {
+                price = price*100 + 1000
+                price /= 100
+            }
+            fc = document.querySelector('.cost')
+            fc.innerHTML = '$' + price.toString()
+        }
+
+        function Subscribe() {
+            b1 = document.querySelector('.p1')
+            b1.innerHTML = "<button class = 'b2' onclick = 'Unsubscribe()'> Subscribed </button>"
+        }
+        function Unsubscribe(){
+            b2 = document.querySelector('.p1')
+            b2.innerHTML = "<button class = 'b1' onclick = 'Subscribe()'> Subscribe </button>"
+        }
+
+	</script>
+</body>
+</html>

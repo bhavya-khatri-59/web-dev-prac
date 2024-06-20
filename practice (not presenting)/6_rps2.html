@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title> Rock Paper Scissors </title>
+</head>
+
+<body>
+    <p> Rock Paper Scissors </p>
+    <p>
+        <button onclick = "game('r')"> Rock </button>
+        <button onclick = "game('p')"> Paper </button>
+        <button onclick = "game('s')"> Scissors </button>
+    </p>
+    <p class = "Result"></p>
+    <p class = "Choices"></p>
+    <p class = "wlr"></p>
+    <button onclick = "reset()"> Reset Score </button>
+	<script>
+        wlr = JSON.parse(localStorage.getItem('score')) || {w: 0, l: 0, d: 0}
+        fwlr = document.querySelector('.wlr')
+        fwlr.innerHTML = "Wins: "+wlr.w+", Losses: "+wlr.l+", Ties: "+wlr.d
+
+        function pick() {
+			num = Math.random()
+			if (num < 1/3) {
+				choice = 'r'
+			} else if (num > 2/3) {
+				choice = 'p'
+			} else {
+				choice = 's'
+			}
+			return choice
+		}
+        function game(pchoice) {
+            choice = pick()
+            wlr = JSON.parse(localStorage.getItem('score')) || {w: 0, l: 0, d: 0}
+            if(choice === pchoice){
+                wlr.d++
+                fr = document.querySelector('.Result')
+                fr.innerHTML = "Tie" 
+            } else if ((choice === 'p' && pchoice === 's') || (choice === 'r' && pchoice === 'p') || (choice === 's' && pchoice === 'r')){
+                wlr.w++
+                fr = document.querySelector('.Result')
+                fr.innerHTML = "You win" 
+            } else {
+                wlr.l++
+                fr = document.querySelector('.Result')
+                fr.innerHTML = "You lose" 
+            }
+            localStorage.setItem('score', JSON.stringify(wlr))
+            fc = document.querySelector('.Choices')
+            fc.innerHTML = "Your choice: "+pchoice+", Computer's Choice: "+choice
+            fwlr = document.querySelector('.wlr')
+            fwlr.innerHTML = "Wins: "+wlr.w+", Losses: "+wlr.l+", Ties: "+wlr.d
+             
+        }
+        function reset() {
+            wlr = {
+                w: 0,
+                l: 0,
+                d: 0,
+            };
+            localStorage.setItem('score', JSON.stringify(wlr))
+            fc = document.querySelector('.Choices')
+            fc.innerHTML = ''
+            fr = document.querySelector('.Result')
+            fr.innerHTML = "" 
+            fwlr = document.querySelector('.wlr')
+            fwlr.innerHTML = "Wins: "+wlr.w+", Losses: "+wlr.l+", Ties: "+wlr.d
+        }
+         
+	</script>
+</body>
+</html>

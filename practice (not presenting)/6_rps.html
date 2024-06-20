@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title> Rock Paper Scissors </title>
+</head>
+
+<body>
+	<p>
+		Rock Paper Scissors
+	</p>
+
+	<p>
+		<button onclick = "
+			wlr = JSON.parse(localStorage.getItem('score'))
+			choice = pick()
+			if (choice === 'r') {
+				wlr.d++
+				alert('Draw'+'\nWins: '+wlr.w+'; Losses: '+wlr.l+'; Ties: '+wlr.d)
+			} else if (choice == 'p') {
+				wlr.l++
+				alert('You lose'+'\nWins: '+wlr.w+'; Losses: '+wlr.l+'; Ties: '+wlr.d)
+			} else {
+				wlr.w++
+				alert('You win'+'\nWins: '+wlr.w+'; Losses: '+wlr.l+'; Ties: '+wlr.d)
+			}
+			localStorage.setItem('score', JSON.stringify(wlr))
+			"> Rock </button>
+		<button onclick = "
+			wlr = JSON.parse(localStorage.getItem('score'))
+			choice = pick()
+			if (choice === 'p') {
+				wlr.d++
+				alert('Draw'+'\nWins: '+wlr.w+'; Losses: '+wlr.l+'; Ties: '+wlr.d)
+			} else if (choice == 's') {
+				wlr.l++
+				alert('You lose'+'\nWins: '+wlr.w+'; Losses: '+wlr.l+'; Ties: '+wlr.d)
+			} else {
+				wlr.w++
+				alert('You win'+'\nWins: '+wlr.w+'; Losses: '+wlr.l+'; Ties: '+wlr.d)
+			}
+			localStorage.setItem('score', JSON.stringify(wlr))
+			"> Paper </button>
+		<button onclick = "
+			wlr = JSON.parse(localStorage.getItem('score'))
+			choice = pick()
+			if (choice === 's') {
+				wlr.d++
+				alert('Draw'+'\nWins: '+wlr.w+'; Losses: '+wlr.l+'; Ties: '+wlr.d)
+			} else if (choice == 'r') {
+				wlr.l++
+				alert('You lose'+'\nWins: '+wlr.w+'; Losses: '+wlr.l+'; Ties: '+wlr.d)
+			} else {
+				wlr.w++
+				alert('You win'+'\nWins: '+wlr.w+'; Losses: '+wlr.l+'; Ties: '+wlr.d)
+			}
+			localStorage.setItem('score', JSON.stringify(wlr))
+			"> Scissors </button>
+		<button onclick = "reset(); alert('Score is reset')"> Reset Score </button>
+	</p>
+
+	<script>
+		function pick() {
+			num = Math.random()
+			if (num < 1/3) {
+				choice = 'r'
+			} else if (num > 2/3) {
+				choice = 'p'
+			} else {
+				choice = 's'
+			}
+			return choice
+		}
+		function declare(){
+			if(!localStorage.getItem('score')){
+				wlr = {
+					w: 0,
+					l: 0,
+					d: 0
+
+				}
+				localStorage.setItem('score', JSON.stringify(wlr))
+			}
+		}
+		declare()
+		document.body.innerHTML += '<p>' + localStorage.getItem('score') + '</p>'
+		function reset(){
+			if(localStorage.getItem('score')){
+				wlr = JSON.parse(localStorage.getItem('score'))
+				wlr.w = 0;
+				wlr.l = 0;
+				wlr.d = 0;
+				localStorage.setItem('score', JSON.stringify(wlr))
+			}
+		}
+		
+	</script>
+</body>
+</html>

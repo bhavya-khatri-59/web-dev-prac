@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title> Calculator </title>
+</head>
+
+<body>
+    <p class = 'Text'></p>
+    <p>
+        <button onclick = "res += '1'; display(res)">1</button>
+        <button onclick = "res += '2'; display(res)">2</button>
+        <button onclick = "res += '3'; display(res)">3</button>
+        <button onclick = "res += '+'; display(res)">+</button>
+    </p>
+
+    <p>
+        <button onclick = "res += '4'; display(res)">4</button>
+        <button onclick = "res += '5'; display(res)">5</button>
+        <button onclick = "res += '6'; display(res)">6</button>
+        <button onclick = "res += '-'; display(res)">-</button>
+    </p>
+
+    <p>
+        <button onclick = "res += '7'; display(res)">7</button>
+        <button onclick = "res += '8'; display(res)">8</button>
+        <button onclick = "res += '9'; display(res)">9</button>
+        <button onclick = "res += '*'; display(res)">*</button>
+    </p>
+
+    <p>
+        <button onclick = "res += '0'; display(res)">0</button>
+        <button onclick = "res += '.'; display(res)">.</button>
+        <button onclick = "res += '/'; res(res)">/</button>
+        <button onclick = "res = String(eval(res)); display(res)">=</button>
+    </p>
+
+    <p> 
+        <button onclick = "res = ''; display('Cleared')">Clear</button> 
+    </p>
+
+	<script>
+        res = ''
+        function display(result){
+            p1 = document.querySelector('.Text')
+            p1.innerHTML = result
+        }
+	</script>
+</body>
+</html>

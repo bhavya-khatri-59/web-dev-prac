@@ -1,0 +1,72 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: "Lucida Console";
+}
+.b1 {
+    background-color: rgb(48, 37, 37);
+    color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 15px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+}
+.b2 {
+    background-color: rgb(48, 37, 37);
+    color: green;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 15px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+}
+.b3 {
+    background-color: green;
+    color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 15px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+}
+.b4 {
+    background-color: rgb(48, 37, 37);
+    color: red;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 15px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+}
+.Text {
+    font-size: 30px;
+    color: white;
+    font-family: "Lucida Console";
+}
+.image {
+    height: 12px;
+}
+.b5 {
+    background-color: red;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 15px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+}

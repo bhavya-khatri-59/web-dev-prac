@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title> Displaying Texting </title>
+</head>
+
+<body>
+    <input onkeyup = 'display(event)'>
+    <p class = 'text'></p>
+	<script>
+        function display(event){
+            p1 = document.querySelector('.text')
+            if(event.key === 'Backspace'){
+                p1.innerHTML = p1.innerHTML.substring(0, p1.innerHTML.length - 1)
+            } else if (event.key === 'Shift'){
+                pass
+            } else {
+                p1.innerHTML += event.key
+            }
+        }
+	</script>
+</body>
+</html>

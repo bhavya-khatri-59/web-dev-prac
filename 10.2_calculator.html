@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title> Calculator </title>
+    <link href = "css files/10.2_calc.css" rel = "stylesheet">
+</head>
+
+<body>
+    <p class = 'Text'></p>
+    <p>
+        <button class = 'b1' onclick = "res += '1'; display(res)">1</button>
+        <button class = 'b1' onclick = "res += '2'; display(res)">2</button>
+        <button class = 'b1' onclick = "res += '3'; display(res)">3</button>
+        <button class = 'b2' onclick = "res += '+'; display(res)">+</button>
+    </p>
+
+    <p>
+        <button class = 'b1' onclick = "res += '4'; display(res)">4</button>
+        <button class = 'b1' onclick = "res += '5'; display(res)">5</button>
+        <button class = 'b1' onclick = "res += '6'; display(res)">6</button>
+        <button class = 'b2' onclick = "res += '-'; display(res)">-</button>
+    </p>
+
+    <p>
+        <button class = 'b1' onclick = "res += '7'; display(res)">7</button>
+        <button class = 'b1' onclick = "res += '8'; display(res)">8</button>
+        <button class = 'b1' onclick = "res += '9'; display(res)">9</button>
+        <button class = 'b2' onclick = "res += '*'; display(res)">*</button>
+    </p>
+
+    <p>
+        <button class = 'b1' onclick = "res += '0'; display(res)">0</button>
+        <button class = 'b1' onclick = "res += '.'; display(res)">.</button>
+        <button class = 'b2' onclick = "res += '/'; display(res)">/</button>
+        <button class = 'b3' onclick = "res = String(eval(res)); display(res, false)">=</button>
+    </p>
+
+    <p> 
+        <button class = 'b2' onclick = "res += '('; display(res)">(</button>
+        <button class = 'b2' onclick = "res += ')'; display(res)">)</button>
+        <button class = 'b4' onclick = "res = ''; display(res)">C</button> 
+        <button class = 'b5' onclick = "res = backspace(res)"><img src = "images/backspace.png" class = 'image'></button> 
+    </p>
+
+	<script src = "js files/10.2_calc.js"></script>
+</body>
+</html>
